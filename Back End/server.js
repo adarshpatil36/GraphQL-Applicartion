@@ -12,11 +12,18 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const mongoose = require("mongoose");
+const uri =
+  "mongodb+srv://root:root@cluster0.qpepu.mongodb.net/Uber_Eats?retryWrites=true&w=majority";
+
+// const client = new MongoClient(uri);
+mongoose.connect(uri, () => console.log("Connected to DB"));
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to uber eats application." });
 });
 
-const address = require("./routes/address");
+const address = require("./services/address");
 app.use("/address", address);
 
 const restaurant = require("./routes/restaurant");

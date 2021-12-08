@@ -51,52 +51,6 @@ exports.findAll = async () => {
   }
 };
 
-// exports.findAll = (req, res) => {
-//   Restaurant.findAll()
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message:
-//           err.message || "Some error occurred while retrieving tutorials.",
-//       });
-//     });
-// };
-
-// exports.findOne = (req, res) => {
-//   const name = data.name;
-//   const password = data.password;
-//   Restaurant.findOne({
-//     where: {
-//       password: password,
-//       [Op.or]: [
-//         {
-//           name: name,
-//         },
-//         {
-//           email: name,
-//         },
-//       ],
-//     },
-//   })
-//     .then((data) => {
-//       if (data) {
-//         const { password, ...postData } = data.dataValues;
-//         res.send(postData);
-//       } else {
-//         res.status(404).send({
-//           message: "Invalid Credentials",
-//         });
-//       }
-//     })
-//     .catch((err) => {
-//       res.status(200).send({
-//         message: "Invalid Credentials",
-//       });
-//     });
-// };
-
 exports.update = async (data) => {
   console.log("In restaurant update", data);
 
@@ -134,41 +88,3 @@ exports.update = async (data) => {
     console.log(error);
   }
 };
-// exports.update = (req, res) => {
-//   const name = data.name;
-//   const password = data.password;
-//   Restaurant.findOne({
-//     where: {
-//       password: password,
-//       [Op.or]: [
-//         {
-//           name: name,
-//         },
-//         {
-//           email: name,
-//         },
-//       ],
-//     },
-//   })
-//     .then((data) => {
-//       if (data) {
-//         const { password, ...postData } = data.dataValues;
-//         res.send(postData);
-//       } else {
-//         res.status(404).send({
-//           message: "Invalid Credentials",
-//         });
-//       }
-//     })
-//     .catch((err) => {
-//       res.status(200).send({
-//         message: "Invalid Credentials",
-//       });
-//     });
-// };
-
-// exports.delete = (req, res) => {};
-
-// exports.deleteAll = (req, res) => {};
-
-// exports.findAllPublished = (req, res) => {};
