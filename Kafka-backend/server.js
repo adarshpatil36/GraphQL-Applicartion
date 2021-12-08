@@ -1,23 +1,16 @@
 var connection = new require("./kafka/Connection");
-const mongoose = require("mongoose");
-const uri =
-  "mongodb+srv://root:root@cluster0.qpepu.mongodb.net/Uber_Eats?retryWrites=true&w=majority";
-
-// const client = new MongoClient(uri);
-mongoose.connect(uri, () => console.log("Connected to DB"));
-
 //topics files
 //var signin = require('./services/signin.js');
-var Restaurant = require("./services/restaurant.js");
-var updateRestaurant = require("./services/updateRestaurant");
-var getAllRestaurant = require("./services/getAllRestaurant");
-var Customer = require("./services/customer");
-var CustomerLogin = require("./services/customerLogin");
-var AddDish = require("./services/addDish");
-var GetDish = require("./services/getDish");
-var AddOrder = require("./services/addOrder");
-var GetPastOrder = require("./services/getPastOrder");
-var Address = require("./services/address");
+var Restaurant = require("../Back End/services/restaurant.js");
+var updateRestaurant = require("../Back End/services/updateRestaurant");
+var getAllRestaurant = require("../Back End/services/getAllRestaurant");
+var Customer = require("../Back End/services/customer");
+var CustomerLogin = require("../Back End/services/customerLogin");
+var AddDish = require("../Back End/services/addDish");
+var GetDish = require("../Back End/services/getDish");
+var AddOrder = require("../Back End/services/addOrder");
+var GetPastOrder = require("../Back End/services/getPastOrder");
+var Address = require("../Back End/services/address");
 
 function handleTopicRequest(topic_name, fname) {
   var consumer = connection.getConsumer(topic_name);

@@ -41,10 +41,10 @@ exports.create = async (data) => {
   }
 };
 
-exports.findAll = async () => {
+exports.findAll = async (req, res) => {
   try {
     const response = await Restaurant.find();
-    console.log(">> kafka", response);
+    // res.send(response);
     return response;
   } catch (error) {
     console.log(error);
