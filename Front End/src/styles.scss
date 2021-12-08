@@ -1,0 +1,634 @@
+$primary-color: #3e9920;
+$white-color: white;
+
+$primary-font: UberMoveText-Medium, Helvetica, sans-serif;
+
+$title-font-weight: 700;
+// .App{
+// display: flex;
+// justify-content: center;
+// }
+#root {
+  margin: auto;
+  // width: 80%;
+  padding: 0 4%;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  #loginButton {
+    width: 100%;
+  }
+
+  img {
+    margin: 50px;
+    height: 32px;
+    width: auto;
+    max-width: inherit;
+  }
+  div {
+    width: 70%;
+  }
+  h5 {
+    font-size: 180%;
+    font-family: $primary-font;
+  }
+  input {
+    display: block;
+    width: 100%;
+    padding-left: 12px;
+  }
+  button {
+    width: 70%;
+    background-color: $primary-color;
+    color: $white-color;
+    border: 0px;
+  }
+  .bottomGroup {
+    min-height: 80px;
+  }
+
+  .loginTab {
+    > * {
+      margin: 10px;
+      height: 40px;
+    }
+    p span {
+      color: $primary-color;
+    }
+  }
+
+  .loginTab {
+    // width: 28%;
+    width: 60%;
+  }
+
+  .footerCard {
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    color: $white-color;
+    font: 15px $primary-font;
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      padding: 0 50px;
+    }
+  }
+}
+
+.topFilter {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  img {
+    width: 8%;
+  }
+}
+
+.NavBar {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  input {
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 12px;
+    margin: 10px;
+    border: 1px solid black;
+  }
+  button {
+    // width: 100px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    margin: 0px 5px;
+    border: 0px;
+  }
+  .loginIcon {
+    img {
+      width: 70px;
+      margin-bottom: 4px;
+    }
+  }
+  span {
+    margin: 8px;
+  }
+  .restLogo {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-size: cover;
+    background-image: url("https://us.123rf.com/450wm/friendesigns/friendesigns1902/friendesigns190200738/117794294-modern-kitchen-logo.jpg?ver=6");
+    float: right;
+  }
+  .userLogo {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-size: cover;
+    background-image: url("https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg");
+    float: right;
+  }
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.offerCard {
+  display: flex;
+  height: 135px;
+  justify-content: space-around;
+  margin: 25px 0px 30px;
+
+  img {
+    width: 25%;
+    border-radius: 14px;
+  }
+}
+.sectionCard {
+  display: flex;
+}
+.advanceFilterCard {
+  flex: 1;
+  padding-right: 20px;
+  max-width: 25%;
+  .accordion-item {
+    border: 0px;
+  }
+  button {
+    border-radius: 14px;
+    border: 0px;
+    margin: 2px;
+  }
+  p {
+    font-weight: $title-font-weight;
+  }
+  span {
+    padding-left: 30px;
+  }
+  .priceRange {
+    display: flex;
+  }
+  .range {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 15px;
+  font-weight: 500;
+}
+.RestaurantDashboard {
+  width: 70%;
+  margin: auto;
+}
+.dishesDashboard {
+  display: flex;
+  justify-content: space-between;
+  span {
+    font-size: 25px;
+  }
+}
+
+.Restaurant {
+  .info {
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+    div:nth-child(2) {
+      min-width: 115px;
+      cursor: pointer;
+    }
+    .shoppigCart {
+      transform: scale(3.5);
+      margin-right: 30px;
+    }
+  }
+  .dishCard {
+    display: flex;
+    flex-flow: wrap;
+    img {
+      min-height: 250px;
+    }
+    p {
+      min-height: 70px;
+    }
+    .card {
+      width: 18rem;
+      margin: 10px;
+      border-radius: 15px;
+      border: 1px solid;
+
+      .card-subtitle {
+        display: flex;
+        justify-content: space-between;
+      }
+      .card-title {
+        min-height: 70px;
+      }
+      .quantity {
+        height: 30px;
+      }
+      .quantity__minus,
+      .quantity__plus {
+        cursor: pointer;
+        color: white;
+        background: #3e9920;
+        border: 0px;
+      }
+      .quantity__minus:active,
+      .quantity__plus:active {
+        transform: scale(1.3);
+      }
+      .quantity__minus,
+      .quantity__plus {
+        cursor: pointer;
+        color: white;
+        background: #3e9920;
+        border-radius: 14px;
+        padding: 0px 18px;
+        border: 0px;
+      }
+      .quantity__input {
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+
+  .backgroundImg {
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 300px;
+    background-size: cover;
+    text-align: left;
+    color: black;
+    min-height: 300px;
+    div {
+      color: white;
+      font: 40px UberMove, sans-serif;
+      left: 180px;
+      position: absolute;
+      top: 44%;
+      left: 6%;
+    }
+  }
+}
+
+.toastHeader,
+.toastCard {
+  color: #fff !important;
+  background-color: #3e9920 !important;
+  border-bottom: 1px solid white !important;
+}
+
+.displayResultCard {
+  .container {
+    margin: auto;
+    padding: 2em;
+    max-width: 68rem;
+    min-width: 82%;
+  }
+
+  .flex {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+
+  .flex > * {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: calc(12.5rem + 13vw);
+    background: #fff;
+    border-radius: 0.75em;
+    overflow: hidden;
+    box-shadow: 0 0.25em 0.6em #0005, 0 0.65em 1em #0004;
+    transition: transform 270ms ease;
+    position: relative;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    inset: 0;
+    isolation: isolate;
+    mix-blend-mode: color;
+    background: linear-gradient(180deg, #0000 48%, 48%, green, 70%, white);
+    opacity: 0;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  .card-body {
+    height: 200px;
+    padding: 1em 0;
+  }
+
+  h3 {
+    text-align: center;
+    color: black;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #0009;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+    margin: 1em auto;
+    padding-inline: 0.5em;
+    max-width: 35ch;
+  }
+}
+
+.OrderItem {
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  }
+
+  body {
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background: #e0e0e0;
+    color: #000000;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 0px;
+  }
+
+  .button {
+    display: inline-block;
+    background: #0e8ce4;
+    border-radius: 5px;
+    height: 48px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  .button a {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #ffffff;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .button:hover {
+    opacity: 0.8;
+  }
+
+  .cart_section {
+    width: 100%;
+    padding-top: 93px;
+    padding-bottom: 111px;
+  }
+
+  .cart_title {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .cart_items {
+    margin-top: 8px;
+  }
+
+  .cart_list {
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .cart_item {
+    width: 100%;
+    padding: 15px;
+    padding-right: 46px;
+  }
+
+  .cart_item_image {
+    width: 133px;
+    height: 133px;
+    float: left;
+  }
+
+  .cart_item_image img {
+    max-width: 100%;
+  }
+
+  .cart_item_info {
+    width: calc(100% - 133px);
+    float: left;
+    padding-top: 18px;
+  }
+
+  .cart_item_name {
+    margin-left: 7.53%;
+  }
+
+  .cart_item_title {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .cart_item_text {
+    font-size: 18px;
+    margin-top: 35px;
+  }
+
+  .cart_item_text span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 11px;
+    -webkit-transform: translateY(4px);
+    -moz-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    -o-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  .cart_item_price {
+    text-align: right;
+  }
+
+  .cart_item_total {
+    text-align: right;
+  }
+  .dropdown {
+    margin: 15px 0px;
+  }
+
+  .order_total {
+    width: 100%;
+    height: 60px;
+    margin: 30px 0px;
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    padding-right: 46px;
+    padding-left: 15px;
+    background-color: #fff;
+  }
+
+  .order_total_title {
+    display: inline-block;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 60px;
+  }
+
+  .order_total_amount {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 26px;
+    line-height: 60px;
+  }
+
+  .cart_buttons {
+    margin: 90px 10px;
+    text-align: right;
+  }
+  .buttongroups {
+    margin-top: 80px;
+  }
+
+  .cart_button_clear {
+    display: inline-block;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: rgba(0, 0, 0, 0.5);
+    background: #ffffff;
+    border: solid 1px #b2b2b2;
+    padding-left: 35px;
+    padding-right: 35px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 26px;
+  }
+
+  .cart_button_clear:hover {
+    border-color: #0e8ce4;
+    color: #0e8ce4;
+  }
+
+  .cart_button_checkout {
+    display: inline-block;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #ffffff;
+    padding-left: 35px;
+    padding-right: 35px;
+    outline: none;
+    cursor: pointer;
+    background-color: #3e9920;
+    vertical-align: top;
+  }
+}
+
+.RestaurantDetails {
+  button {
+    background-color: #3e9920;
+    border: 0px;
+  }
+  .custom-select {
+    padding: 8px;
+  }
+}
+.postOrder {
+  display: flex;
+  justify-content: space-between;
+  div {
+    font-size: 25px;
+  }
+  button {
+    border-radius: 20px;
+    background-color: $primary-color;
+    color: $white-color;
+    border: 0px;
+  }
+}
+
+.PastOrderCard > span:nth-of-type(1) {
+  font-size: 30px;
+  margin-top: 20px;
+}
+.paginationButtons {
+  display: flex;
+  justify-content: space-evenly;
+  button {
+    padding: 10px;
+    margin-bottom: 40px;
+    background-color: #3e9920;
+    color: white;
+    border: 0px;
+  }
+}
+.checkoutButtons {
+  label {
+    background: #3e9920;
+    padding: 0px 12px;
+    color: white;
+    border-radius: 8px;
+  }
+}
+.additionalInfo {
+  margin-top: 25px;
+}
