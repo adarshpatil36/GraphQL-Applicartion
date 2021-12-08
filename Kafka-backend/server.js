@@ -39,12 +39,6 @@ function handleTopicRequest(topic_name, fname) {
 // Add your TOPICs here
 //first argument is topic name
 //second argument is a function that will handle this topic request
-handleTopicRequest("address_getAllData", Address);
-handleTopicRequest("post_restaurant", Restaurant);
-handleTopicRequest("post_restaurant_updateData", updateRestaurant);
-handleTopicRequest("restaurant_getAllData", getAllRestaurant);
-handleTopicRequest("post_customer", Customer);
-handleTopicRequest("post_customerLogin", CustomerLogin);
 handleTopicRequest("post_dish", AddDish);
 handleTopicRequest("get_dishes", GetDish);
 handleTopicRequest("post_order", AddOrder);

@@ -1,145 +1,10 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const graphql = require("graphql");
-
-const {
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLList,
-  GraphQLBoolean,
-} = graphql;
 
 const { graphqlHTTP } = require("express-graphql");
 
-const restaurant = require("./controllers/restaurant");
-
-const RestaurantType = new GraphQLObjectType({
-  name: "Restaurant",
-  fields: () => ({
-    name: {
-      type: GraphQLString,
-    },
-    tags: {
-      type: GraphQLString,
-    },
-    address: {
-      type: GraphQLString,
-    },
-    description: {
-      type: GraphQLString,
-    },
-    timings: {
-      type: GraphQLString,
-    },
-    deliveryTime: {
-      type: GraphQLString,
-    },
-    deliveryFee: {
-      type: GraphQLString,
-    },
-    rating: {
-      type: GraphQLInt,
-    },
-    email: {
-      type: GraphQLString,
-    },
-    password: {
-      type: GraphQLString,
-    },
-    contact: {
-      type: GraphQLString,
-    },
-    country: {
-      type: GraphQLString,
-    },
-    restaurantPic: {
-      type: GraphQLString,
-    },
-    isRestaurant: {
-      type: GraphQLBoolean,
-    },
-  }),
-});
-const RootQuery = new GraphQLObjectType({
-  name: "RootQueryType",
-  fields: {
-    getAllRestaurants: {
-      type: new GraphQLList(RestaurantType),
-      args: {
-        _id: {
-          type: GraphQLString,
-        },
-      },
-      async resolve(parent, args) {
-        const res = await restaurant.findAll();
-        return res;
-      },
-    },
-  },
-});
-const Mutation = new GraphQLObjectType({
-  name: "Mutation",
-  fields: {
-    createRestaurant: {
-      type: RestaurantType,
-      args: {
-        _id: {
-          type: GraphQLString,
-        },
-        name: {
-          type: GraphQLString,
-        },
-        tags: {
-          type: GraphQLString,
-        },
-        address: {
-          type: GraphQLString,
-        },
-        description: {
-          type: GraphQLString,
-        },
-        timings: {
-          type: GraphQLString,
-        },
-        deliveryTime: {
-          type: GraphQLString,
-        },
-        deliveryFee: {
-          type: GraphQLString,
-        },
-        rating: {
-          type: GraphQLInt,
-        },
-        email: {
-          type: GraphQLString,
-        },
-        password: {
-          type: GraphQLString,
-        },
-        contact: {
-          type: GraphQLString,
-        },
-        country: {
-          type: GraphQLString,
-        },
-        restaurantPic: {
-          type: GraphQLString,
-        },
-        isRestaurant: {
-          type: GraphQLBoolean,
-        },
-      },
-      async resolve(parent, args) {
-        const res = await restaurant.create(args);
-        return res;
-      },
-    },
-  },
-});
-
+const schema = require("./schemas/index");
 var corsOptions = {
   origin: "http://localhost:3000",
 };
@@ -174,7 +39,6 @@ app.get("/", (req, res) => {
 
 // const restaurant = require("./routes/restaurant");
 // app.use("/restaurant", restaurant);
-const schema = new GraphQLSchema({ query: RootQuery, mutation: Mutation });
 app.use(
   "/graphql",
   graphqlHTTP({
